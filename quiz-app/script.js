@@ -1,6 +1,6 @@
 const quizData = [
     {
-        question: "How old is Jungu?",
+        question: "How old is JungSu?",
         a: '15',
         b: '30',
         c: '24',
