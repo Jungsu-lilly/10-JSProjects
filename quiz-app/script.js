@@ -35,12 +35,12 @@ const quizData = [
         d: 'Ducati',
         correct: 'c'
     },{
-        question: 'What year was JavaScript launched?',
-        a:'2010',
-        b:'1995',
-        c:'2004',
-        d:'none of the above',
-        correct: 'b'
+        question: '함영민 인성은 몇타치 인가요?',
+        a:'ㅆㅅㅌㅊ',
+        b:'ㅅㅌㅊ',
+        c:'ㅈㅌㅊ',
+        d:'ㅆㅎㅌㅊ',
+        correct: 'd'
     }
 ];
 
