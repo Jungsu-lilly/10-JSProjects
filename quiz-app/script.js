@@ -40,11 +40,12 @@ const quizData = [
         b:'1995',
         c:'2004',
         d:'none of the above',
-        correct: 'c'
+        correct: 'b'
     }
 ];
 
 const answerEls = document.querySelectorAll('.answer');
+const quiz = document.getElementById('quiz');
 const questionEl = document.getElementById("question");
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -107,8 +108,7 @@ submitBtn.addEventListener('click', ()=>{
             loadQuiz();
         }
         else{
-            // TODO: Show results
-            alert('You finished! Thanks for submission')
+            quiz.innerHTML = `<h2>당신의 점수는 ${score}/${quizData.length} 입니다.</h2>`;
         }
     }
 
