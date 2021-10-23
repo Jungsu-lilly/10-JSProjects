@@ -26,7 +26,7 @@ const quizData = [
         b: 'Sushi',
         c: 'Kymak',
         d: 'Banmi',
-        correct: 'c'
+        correct: 'c'  
     },{
         question: 'Which of the following is not a group under Volkswagen?',
         a: 'Audi',
