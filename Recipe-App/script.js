@@ -4,32 +4,19 @@ const favoriteContainer = document.getElementById('fav-meals');
 getRandomMeal();
 fetchFavMeals();
 
-async function getRandomMeal() {
+async function getRandomMeal() {    // meal db에서 데이터를 불러옴.
    const resp = await fetch
    ('https://www.themealdb.com/api/json/v1/1/random.php');
 
-
    const respData = await resp.json();
-   const randomMeal = respData.meals[0];
-   console.log(respData);
 
+   const randomMeal = respData.meals[0];
    addMeal(randomMeal, true);
 }
 
-async function getMealById(id) {
-    const resp = await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id);
 
-    const respData = await resp.json();
-    const meal = respData.meals[0];
+function addMeal(mealData, random = false){   // 불러온 음식 데이터를 화면에 출력하는 함수
 
-    return meal;
-}
-
-async function getMealBySearch(term){
-    const meals = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + term);
-}
-
-function addMeal(mealData, random = false){
     const meal = document.createElement('div'); // 'div'의 HTML 요쇼를 만들어 반환.
     meal.classList.add('meal'); // meal 클래스 추가.
 
@@ -56,6 +43,8 @@ function addMeal(mealData, random = false){
     `;
 
     const btn = meal.querySelector('.meal-body .fav-btn');
+
+    console.log(btn);
     
     btn.addEventListener("click", ()=>{
         if(btn.classList.contains("active")){
@@ -65,9 +54,27 @@ function addMeal(mealData, random = false){
             addMealLS(mealData.idMeal)
             btn.classList.add("active");
         }
+        // clean the container
+        favoriteContainer.innerHTML = "";
+        fetchFavMeals();
     });
 
     meals.appendChild(meal); // html 문서의 meals 요소(element)뒤에 meal을 붙임.
+}
+
+
+async function getMealById(id) {
+    const resp = await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id);
+
+    const respData = await resp.json();
+    const meal = respData.meals[0];
+
+    return meal;
+}
+
+
+async function getMealBySearch(term){
+    const meals = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + term);
 }
 
 
