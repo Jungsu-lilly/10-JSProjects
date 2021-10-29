@@ -5,6 +5,8 @@ getRandomMeal();
 fetchFavMeals();
 
 async function getRandomMeal() {    // meal db에서 데이터를 불러옴.
+
+
    const resp = await fetch
    ('https://www.themealdb.com/api/json/v1/1/random.php');
 
@@ -44,7 +46,7 @@ function addMeal(mealData, random = false){   // 불러온 음식 데이터를 �
 
     const btn = meal.querySelector('.meal-body .fav-btn');
 
-    console.log(btn);
+    // console.log(btn);
     
     btn.addEventListener("click", ()=>{
         if(btn.classList.contains("active")){
@@ -86,6 +88,7 @@ function addMealLS(mealId){
     ([...mealIds, mealId]));
 }
 
+
 function removeMealLS(mealId){
     const mealIds = getMealsLS();
 
@@ -97,15 +100,23 @@ function removeMealLS(mealId){
 }
 
 function getMealsLS(){
-    const mealIds = JSON.parse(localStorage.getItem('mealIds'));
+
+    // mealIds : mealId 가 담긴 배열 형태.
+    const mealIds = JSON.parse(
+        localStorage.getItem('mealIds')
+    );
+
+    console.log(mealIds);
 
     return mealIds === null ? [] : mealIds;
 }
 
 
 async function fetchFavMeals(){
+    //clean the container
+    favoriteContainer.innerHTML = "";
+    
     const mealIds = getMealsLS();
-
     const meals = [];
 
     for(let i=0;i<mealIds.length; i++ ){
@@ -118,6 +129,7 @@ async function fetchFavMeals(){
 
 
 function addMealFav(mealData){
+
     const favMeal = document.createElement('li');
 
     favMeal.innerHTML = `
@@ -125,7 +137,17 @@ function addMealFav(mealData){
             src="${mealData.strMealThumb}"
             alt="${mealData.strMeal}"
         /><span>${mealData.strMeal}</span>
+        <button class="clear">
+            <i class="fas fa-window-close"></i>
+        </button>
     `;
+
+    const btn = favMeal.querySelector('.clear');
+    btn.addEventListener('click', ()=>{
+        removeMealLS(mealData.idMeal);
+        fetchFavMeals();
+    })
+
 
     favoriteContainer.appendChild(favMeal);
 }
