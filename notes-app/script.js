@@ -46,6 +46,8 @@ function addNewNote(text = ''){
 
     deleteBtn.addEventListener('click',()=>{
         note.remove();
+        
+        updateLS();
     })
 
     textArea.addEventListener('input', (e) =>{
@@ -65,6 +67,7 @@ function updateLS(){
     const notes = [];
 
     notesText.forEach(note => {
+        console.log(note.value);
         notes.push(note.value);
     })
 
