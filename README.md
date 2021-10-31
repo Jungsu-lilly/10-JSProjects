@@ -28,4 +28,5 @@ IMGPATH = "https://image.tmdb.org/t/p/w1280";<br>
 SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";<br>
 - Movie database 에서 유명한 영화 20개를 추출해 출력.<br>
 - 각 영화의 이름과 평점이 표시됩니다.<br>
-- search에서 원하는 영화의 이름을 입력해 결과를 볼 수 있습니다.<br><br>
+- 원하는 영화를 Search 할 수 있습니다.<br>
+- 마우스를 갖다 대면 영화의 개요가 나타납니다.<br><br>
