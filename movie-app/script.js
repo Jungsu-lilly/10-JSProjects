@@ -13,9 +13,13 @@ const search = document.getElementById('search');
 getMovies(APIURL);
 
 
-async function getMovies(url){
+async function getMovies(url){ // get movie
     const resp = await fetch(url);
     const respData = await resp.json();
+
+//    console.log(resp, respData) ;
+
+    console.log(respData.results);
 
     showMovies(respData.results);
 }
@@ -27,7 +31,7 @@ function showMovies(movies){
     main.innerHTML = "";
 
     movies.forEach((movie) => {
-        const { poster_path, title, vote_average, overview } = movie; // restructuring (in JS)
+        const { poster_path, title, vote_average, overview } = movie; // destructuring (in JS)
 
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
@@ -61,13 +65,13 @@ function getClassByRate(vote){
 
 
 form.addEventListener('submit',(e)=>{
+    //input 또는 button 클릭 이벤트가 발생 했을때 페이지가 리로드가 되는데 그 현상을 막아줌
     e.preventDefault();
-
+    
     const searchTerm = search.value;
 
     if(searchTerm){
         getMovies(SEARCHAPI + searchTerm);
-
         search.value = "";
     }
 });
