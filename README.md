@@ -23,13 +23,13 @@ HTML, CSS, JS 를 사용한 간단한 웹 어플리케이션 9가지입니다.<b
 
 ## 5. Movie-app
 DB 출처:  themoviedb
-APIURL = "https://api.themoviedb.org";<br>
-IMGPATH = "https://image.tmdb.org/t/p/w1280";<br>
-SEARCHAPI = "https://api.themoviedb.org/3/search/movie";<br>
-> api를 사용하기 위해서는 api key가 필요합니다. api key를 발급해 데이터베이스를 이용했습니다.
+APIURL = https://api.themoviedb.org<br>
+SEARCHAPI = https://api.themoviedb.org/3/search/movie<br>
+> moviedb 의 api를 활용해 만든 어플리케이션입니다.
+> api를 사용하기 위해서 api key를 발급받아 데이터베이스를 이용했습니다.
 
 ### 작동방식
 - Movie database 에서 유명한 영화 20개를 추출해 출력. 1페이지를 출력하며 총 500페이지까지 존재한다.<br>
 - 각 영화의 이름과 평점이 표시됩니다. 평점에 따라 평점이 다른 색으로 표시됩니다.<br>
-- 위의 search 바에 원하는 영화의 이름을 입력해 Search 할 수 있습니다.<br>
+- 위의 search 바에 원하는 영화의 이름을 입력해 Search 할 수 있습니다. 한 페이지에 20개 표시됩니다.<br>
 - 마우스를 갖다 대면 영화의 개요가 나타납니다.<br><br>
