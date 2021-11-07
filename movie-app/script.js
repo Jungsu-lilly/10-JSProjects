@@ -1,8 +1,9 @@
-const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=c34435b5564f5a284f362fe8f64dda7a&page=1";
+const KEY = 'c34435b5564f5a284f362fe8f64dda7a';
+const APIURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}`;
 
-const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+const IMGPATH = "https://image.tmdb.org/t/p/w500";
 const SEARCHAPI =
-    "https://api.themoviedb.org/3/search/movie?&api_key=c34435b5564f5a284f362fe8f64dda7a&query=";
+    `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=`;
 
 const main = document.querySelector('main');
 const form = document.getElementById('form');
@@ -14,10 +15,11 @@ getMovies(APIURL);
 
 
 async function getMovies(url){ // get movie
+    console.log(url);
     const resp = await fetch(url);
     const respData = await resp.json();
-
-//    console.log(resp, respData) ;
+    
+    console.log(respData);
 
     console.log(respData.results);
 
