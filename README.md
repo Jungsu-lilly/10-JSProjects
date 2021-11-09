@@ -26,7 +26,8 @@ DB 출처:  themoviedb
 APIURL = https://api.themoviedb.org<br>
 SEARCHAPI = https://api.themoviedb.org/3/search/movie<br>
 > moviedb 의 api를 활용해 만든 어플리케이션입니다.
-> api를 사용하기 위해서 api key를 발급받아 데이터베이스를 이용했습니다.
+> api를 사용하기 위해서 api key를 발급받아 데이터베이스를 이용했습니다. 
+> REST API 를 이용할 경우  세션 ID, request_token 을 발급받아 사용해야 합니다.
 
 ### 작동방식
 - Movie database 에서 유명한 영화 20개를 추출해 출력. 1페이지를 출력하며 총 500페이지까지 존재한다.<br>
