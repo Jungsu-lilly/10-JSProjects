@@ -22,6 +22,7 @@ HTML, CSS, JS 를 사용한 간단한 웹 어플리케이션 9가지입니다.<b
 - 하나 list를 우클릭해 지울 수 있다.<br><br>
 
 ## 5. Movie-app
+실행 결과: file:///C:/Users/matt1/OneDrive/JS-Project/movie-app/index.html
 DB 출처:  themoviedb
 APIURL = https://api.themoviedb.org<br>
 SEARCHAPI = https://api.themoviedb.org/3/search/movie<br>
