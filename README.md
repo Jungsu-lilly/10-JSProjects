@@ -1,5 +1,5 @@
 # 9-JSProjects
-HTML, CSS, JS 를 사용한 간단한 웹 어플리케이션 입니다.<br>
+JS 를 사용한 간단한 웹 어플리케이션 입니다.<br>
 출처: https://www.youtube.com/watch?v=dtKciwk_si4&t=36s <br>
 
 ## 1. Quiz-APP
