@@ -1,6 +1,5 @@
-# 9-JSProjects
+# 5-JSProjects
 JS 를 사용한 간단한 웹 어플리케이션 입니다.<br>
-출처: https://www.youtube.com/watch?v=dtKciwk_si4&t=36s <br>
 
 ## 1. Quiz-APP
 - 사용자가 지정한 퀴즈가 출제되며 답이 맞은 경우 점수 추가, 틀린 경우 -1 점.<br>
